@@ -10,24 +10,23 @@
 В модели для обработки и вывода СЕО и ОГ добавить:
 
 
-//    Open graph
-
+<!-- OG Block -->
    public function getOpenGraph(){
-
-        return $this->hasOne(Opengraf::className(), ['itemId' => 'id'])->andWhere(['modelName' => $this::className()]);
-    }
+        return $this->hasOne(Opengraf::className(), ['itemId' => 'id'])
+                    ->andWhere(['modelName' => $this::className()]);
+        }
 
    public function getOGItem($id){
-
-        return Opengraf::find()->where(['modelName' => $this::className()])->andWhere(['itemId' => $id])->one();
-    }
+        return Opengraf::find()->where(['modelName' => $this::className()])
+                               ->andWhere(['itemId' => $id])->one();
+        }
 
   public function getSEO($id){
-
-        return Opengraf::find()->where(['modelName' => $this::className()])->andWhere(['itemId' => $id])->one();
+        return Opengraf::find()->where(['modelName' => $this::className()])
+                               ->andWhere(['itemId' => $id])->one();
     }
 
-// End Open Graph
+<!-- End OG Block -->
 
 ## backend проекта
 
