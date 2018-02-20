@@ -12,17 +12,17 @@
 
 //    Open graph
 
-   ## public function getOpenGraph(){
+   public function getOpenGraph(){
 
         return $this->hasOne(Opengraf::className(), ['itemId' => 'id'])->andWhere(['modelName' => $this::className()]);
     }
 
-   ## public function getOGItem($id){
+   public function getOGItem($id){
 
         return Opengraf::find()->where(['modelName' => $this::className()])->andWhere(['itemId' => $id])->one();
     }
 
-   ## public function getSEO($id){
+  public function getSEO($id){
 
         return Opengraf::find()->where(['modelName' => $this::className()])->andWhere(['itemId' => $id])->one();
     }
