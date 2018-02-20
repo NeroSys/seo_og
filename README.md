@@ -49,7 +49,6 @@
 
                     if (!empty($tags)) {
 
-// get SEO and title, keywords, description on default language == Russian
                         $seo = $model->getSEO($model->id);
                         $lang_seo = $seo->getDataItemsAdmin();
 
@@ -60,7 +59,6 @@
                             'dataProvider' => new ActiveDataProvider(['query' => $model->getOpenGraph()]),
                             'layout' => "{items}\n{pager}",
                             'columns' => [
-//                                'GAuthor',
                                 [
                                     'class' => 'yii\grid\ActionColumn',
                                     'template' => '{update} {delete} {link}',
@@ -171,7 +169,8 @@ $name = $page {или $product, $category == переменная, к котор
             );
         }
 
-## во view для вывода на интерфейс получаем данные в языковой версии сайта на момент просмотра
+## во view 
+для вывода на интерфейс получаем данные в языковой версии сайта на момент просмотра
 
 <?php  $name = $page->getSEO($page->id);
 if(!empty($name)) $lang_name = $name->getDataItems(); ?>
